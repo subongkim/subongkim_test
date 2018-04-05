@@ -38,5 +38,8 @@ int main()
 	Test t7 = t6;	// 초기화. 복사 생성자
 	t6 = t7;		// 대입.   대입 연산자
 	t6 = move(t7);	// move 대입 연산자
+
+	cout << "swap" << endl;
+	Swap(t6, t7);
 }
 
