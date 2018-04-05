@@ -1,45 +1,50 @@
 #include <iostream>
+#include <algorithm>
+#include <cstring>
 using namespace std;
 class Test
 {
+	char* data;
 public:
-	Test() {}	// 자원할당
-	~Test() {}	// 자원해지
-	Test(const Test& t) { cout << "Copy" << endl; }
-	Test(Test&& t)		{ cout << "Move" << endl; }
-
-	Test& operator=(const Test& t)	{
-		{ cout << "Copy=" << endl; }
-		return *this; } // 복사 대입연산자
-	Test& operator=(Test&& t)		{ 
-		{ cout << "Move=" << endl; }
-		return *this; } // move 대입연산자
-};
-
+	Test(const char* dataPtr) : data(new char[strlen(dataPtr)+1]){	
+		strcpy(data, dataPtr);
+	}
+	~Test() {	delete[] data;	}	// 소멸자
+	Test(const Test& t) { 	cout << "Copy" << endl;	} // 복사 생성자
+	Test(Test&& t) : data(t.data){ // 이동 생성자
+		t.data = nullptr;
+		cout << "Move" << endl; 
+	}
+	Test& operator=(const Test& t)	// 복사 대입연산자
+	{
+		cout << "Copy=" << endl; 
+		return *this; 
+	}
+	Test& operator=(Test&& t)	// move 대입연산자		
+	{  
+		data = t.data;
+		t.data = nullptr;
+		cout << "Move=" << endl; 
+		return *this; 
+	} 
+	friend ostream& operator<<(ostream& os, const Test& t)
+	{
+		os << t.data;
+		return os;
+	}
+}; 
 template<typename T> void Swap(T& x, T& y)
 {
-
-	//	Test tmp = x;	// 복사 생성자
-	//	x = y;			// 복사 대입
-	//	y = tmp;
 	Test tmp = move(x);
 	x = move(y);
 	y = move(tmp);
 }
 int main()
 {
-	Test t1;
-	Test t2 = t1;						// Copy
-	Test t3 = Test();					// Move
-	Test t4 = static_cast<Test&&>(t1);	// Move
-	Test t5 = move(t2);					// Move, move가 내부적으로 위처럼 캐스팅함.
-
-	Test t6;
-	Test t7 = t6;	// 초기화. 복사 생성자
-	t6 = t7;		// 대입.   대입 연산자
-	t6 = move(t7);	// move 대입 연산자
-
+	Test t1("world");
+	Test t2("hello");
 	cout << "swap" << endl;
-	Swap(t6, t7);
+	Swap(t1, t2);
+	cout << t1 << " " << t2 << endl;
 }
 
