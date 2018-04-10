@@ -17,14 +17,14 @@ using std::endl;
 class Point {
 	int x, y; //테스트코드
 public:
-	Point(int a, int b) : x(a), y(b) {
+	Point(int a, int b) : x{ a }, y{ b } {
 		cout << "Point(int, int)" << endl;
 	}
-	Point(const Point& p)
+	Point(const Point& p) : x{ p.x }, y{ p.y }
 	{
 		cout << "Copy" << endl;
 	}
-	Point(Point&& p) noexcept
+	Point(Point&& p) _NOEXCEPT : x{ std::move(p.x) }, y{ std::move(p.y) }
 	{
 		cout << "Move" << endl;
 	}
