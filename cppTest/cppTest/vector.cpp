@@ -5,13 +5,13 @@
 using std::cout;
 using std::endl;
 
-/*
+
 #ifndef _DEBUG	// vc
 
 #define new new(_CLIENT_BLOCK,__FILE__,__LINE)
 
 #endif
-*/
+
 // 아래 Point에는 디폴트 생성자가 없습니다. 디폴트 생성자를 만들지 말고,
 // 아래 상태에서 과제를 진행해주세요..
 class Point {
@@ -44,10 +44,7 @@ public:
 	Vector(std::initializer_list<T> s) : buff(static_cast<T*>(operator new(sizeof(T)* s.size()))), sz(s.size()), capa(s.size())
 	{
 		int j = 0;
-		/*for (auto i = s.begin(); i != s.end(); ++i, j++)	// begin(s)를 사용하면 아래 55번줄과 이름이 겹쳐서 오류발생.
-		{													// 이름 압겹치면 가능. 좋은 방법이 안떠오름...
-		new(buff + j) T(*i);
-		}*/
+		//ㅣㅎ
 		for (auto& i : s)
 		{
 			new(buff + (j++)) T{ std::move_if_noexcept(i) };
@@ -68,8 +65,8 @@ public:
 			buff[i].~T();
 		}
 		operator delete(buff);
-		//delete buff; //위와 차이점을 모르겠음.
-
+		//delete buff; //operator new를 하면 메모리 앞에 크기를 저장함.(new[]는 개수까지)
+		//그 이후 operator delete 시에 그 크기에 맞게 메모리 해제를 하지만 문제는 소멸자를 한번만 부른다는 것!	
 	}
 	T* begin()
 	{
@@ -224,29 +221,11 @@ public:
 };
 
 int main(int argc, char** argv) {
-	//_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 
 	// 1. 아래 한 줄이 실행되게 해주세요..
 	//    Point 10개를 위한 버퍼가 만들어져야 하고, Point(1,1)로 초기화 되어야 합니다.
 	Vector<Point> v(10, Point(1, 1));
-
-	// 2. 버퍼가 20개로 할당 되고 기존 10개는 이동(복사)하고,
-	//    새로운 10개는 Point(0,0)으로 초기화되게 하세요.
-	v.resize(20, Point(0, 0));
-	// 3. 버퍼 크기를 다시 10개로 줄여 주세요. - 실제 메모리는 줄이지 말고, 객체만 파괴(소멸자 호출)해 주세요.
-	v.resize(10);
-	cout << v.size() << endl; // 10
-	cout << v.capacity() << endl; // 20
-	// 4. initializer_list 추가하기
-	Vector<int> v3{ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-	v3.resize(5);
-
-	Vector<int> v2{ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-
-	// 5. ranged for 지원하기
-	for (auto n : v2) {
-		cout << n << endl; // 1,2,3,4,5,6,7,8,9,10
-	}
 
 	return 0;
 }
