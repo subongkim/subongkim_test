@@ -1,21 +1,37 @@
 #include <iostream>
 
-int Add1(int a, int b) { return a + b; }
-inline int Add2(int a, int b) { return a + b; }
-
-int main()
+inline bool cmp1(int a, int b) // 1번
+{ 
+	// 1-1번
+	return a > b; 
+} 
+inline bool cmp2(int a, int b) // 2번
 {
-	int n1 = Add1(1, 2);	//호출
-	int n2 = Add2(1, 2);	//치환
-
-	int(*f)(int, int);
-
-	f = &Add2;
-
-	int n3 = f(1, 2);	//함수포인터에 담아서 사용하면 '치환'대신 '호출'이 됨.
-						//컴파일러가 아는 것은 f는 함수포인터 변수라고만 알기 때문에. 
-						//또한 함수포인터 '변수'이기에 컴파일시간에 정할 수 없는데에 반해
-						//인라인함수는 컴파일시간에 동작하기때문에.
+	// 2-1번
+	return a < b; 
+}
+struct Less // 3번
+{
+	// 3-1번
+	inline bool operator()(int a, int b) const 
+	{ 
+		// 3-2번
+		return a < b; 
+	} 
+};
+struct Greater{ inline bool operator()(int a, int b) const { return a > b; } }; // 4번
+template<typename T> void foo(T f) // 5번
+{
+	bool b = f(1, 2);
+}
+int main() //6번
+{
+	// hello
+	foo(cmp1);
+	foo(cmp2);
+	foo(Less());
+	foo(Greater());
+	// world
 	return 0;
 }
 
