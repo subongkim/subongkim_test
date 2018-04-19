@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\MenuHandler">
+      <UniqueIdentifier>{19897876-c235-43f1-bbcd-32eeb235def8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Pizza">
+      <UniqueIdentifier>{4e86b0d3-cabb-4735-bdf4-96a658bb40b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Factory">
+      <UniqueIdentifier>{679c104f-9581-4642-9cb8-a9821b0a3c8f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Pizza">
+      <UniqueIdentifier>{cadf2e5c-3146-45ea-83a8-6a2e637e00c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Add%28Deco%29">
+      <UniqueIdentifier>{2056435f-e52a-4ed2-8520-b1d40ca8d2dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Add%28Deco%29">
+      <UniqueIdentifier>{d4d5ef30-a427-4609-ae99-b3f024b24e07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Factory">
+      <UniqueIdentifier>{6b049f04-20c5-452d-933d-91a7f808d568}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="POS.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="OrderManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuHandler.ChooseTopping.cpp">
+      <Filter>Source Files\MenuHandler</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuHandler.AddOrder.cpp">
+      <Filter>Source Files\MenuHandler</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuHandler.cpp">
+      <Filter>Source Files\MenuHandler</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuHandler.AddPizza.cpp">
+      <Filter>Source Files\MenuHandler</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuHandler.Bill.cpp">
+      <Filter>Source Files\MenuHandler</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuHandler.Make.cpp">
+      <Filter>Source Files\MenuHandler</Filter>
+    </ClCompile>
+    <ClCompile Include="Domino.cpp">
+      <Filter>Source Files\Pizza</Filter>
+    </ClCompile>
+    <ClCompile Include="Mister.cpp">
+      <Filter>Source Files\Pizza</Filter>
+    </ClCompile>
+    <ClCompile Include="School.cpp">
+      <Filter>Source Files\Pizza</Filter>
+    </ClCompile>
+    <ClCompile Include="Add.cpp">
+      <Filter>Source Files\Add%28Deco%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Chicken.cpp">
+      <Filter>Source Files\Add%28Deco%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Beef.cpp">
+      <Filter>Source Files\Add%28Deco%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Shrimp.cpp">
+      <Filter>Source Files\Add%28Deco%29</Filter>
+    </ClCompile>
+    <ClCompile Include="AddFactory.cpp">
+      <Filter>Source Files\Factory</Filter>
+    </ClCompile>
+    <ClCompile Include="PizzaFactory.cpp">
+      <Filter>Source Files\Factory</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="POS.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="OrderManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Domino.h">
+      <Filter>Header Files\Pizza</Filter>
+    </ClInclude>
+    <ClInclude Include="PizzaFactory.h">
+      <Filter>Header Files\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="Add.h">
+      <Filter>Header Files\Add%28Deco%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Pizza.h">
+      <Filter>Header Files\Pizza</Filter>
+    </ClInclude>
+    <ClInclude Include="Mister.h">
+      <Filter>Header Files\Pizza</Filter>
+    </ClInclude>
+    <ClInclude Include="School.h">
+      <Filter>Header Files\Pizza</Filter>
+    </ClInclude>
+    <ClInclude Include="AddFactory.h">
+      <Filter>Header Files\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="Chicken.h">
+      <Filter>Header Files\Add%28Deco%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Beef.h">
+      <Filter>Header Files\Add%28Deco%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Shrimp.h">
+      <Filter>Header Files\Add%28Deco%29</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
