@@ -1,5 +1,9 @@
 #include "Shrimp.h"
 
+Pizza* Shrimp::Create(Pizza* pz)
+{
+	return new Shrimp(pz);
+}
 Shrimp::Shrimp(Pizza* pz) : Add(pz){
 	name = "»õ¿ì";
 }
@@ -42,3 +46,4 @@ void Shrimp::Delete()
 }
 //virtual void MakeCheeze() override{}
 //virtual void MakeDough() override{}
+RegisterPizza Shrimp::rp(30, &Shrimp::Create);

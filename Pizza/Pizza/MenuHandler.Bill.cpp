@@ -30,5 +30,9 @@ void MenuHandler::Bill()
 		pz[i]->Delete();
 		delete[] pz[i];
 	}
-	pz.clear();	
+	pz.clear();	//√ ±‚»≠
+	pan = -1;
+	topping_count_ = 0;
+	checkNum.clear();
+	preset.clearToppingList();
 }

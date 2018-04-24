@@ -76,8 +76,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Add.cpp" />
-    <ClCompile Include="AddFactory.cpp" />
+    <ClCompile Include="pizzaDecorator.cpp" />
     <ClCompile Include="Beef.cpp" />
     <ClCompile Include="Chicken.cpp" />
     <ClCompile Include="Domino.cpp" />
@@ -96,8 +95,7 @@
     <ClCompile Include="Shrimp.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Add.h" />
-    <ClInclude Include="AddFactory.h" />
+    <ClInclude Include="pizzaDecorator.h" />
     <ClInclude Include="Beef.h" />
     <ClInclude Include="Chicken.h" />
     <ClInclude Include="Domino.h" />

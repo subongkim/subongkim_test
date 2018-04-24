@@ -18,7 +18,10 @@ void MenuHandler::AddOrder()
 	cout << endl;
 	cout << ">> ";
 	cin >> pizzaBrand_;
+	PizzaFactory& factory = PizzaFactory::getInstance();
+	Pizza* p = factory.OrderPizza(pizzaBrand_);
+	pz.push_back(p);
 	
-	pz.push_back(pf->OrderPizza(pizzaBrand_));
+	//pz.push_back(pf->OrderPizza(pizzaBrand_));
 	preset.setPizzaBrand(pizzaBrand_);
 }

@@ -10,7 +10,7 @@ MenuHandler::MenuHandler(Order &preset) : preset(preset)
 
 bool MenuHandler::Run()
 {
-	int menu_ = 0;
+	int menu = 0;
 	enum class menu : int { order = 1, addBrand, addTopping };
 	cout << "원하시는 메뉴를 선택해주세요." << endl;
 	cout << "# 1. 피자 주문" << endl;
@@ -19,8 +19,8 @@ bool MenuHandler::Run()
 	cout << "# 4. 프로그램 종료" << endl;
 	cout << endl;
 	cout << ">> ";
-	cin >> menu_;
-	switch (menu_)
+	cin >> menu;
+	switch (menu)
 	{
 	case static_cast<int>(menu::order) :
 		do{				//주문 방식

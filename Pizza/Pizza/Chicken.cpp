@@ -1,5 +1,9 @@
 #include "Chicken.h"
 
+Pizza* Chicken::Create(Pizza* pz)
+{
+	return new Chicken(pz);
+}
 Chicken::Chicken(Pizza* pz) : Add(pz)
 {
 	name = "´ß°¡½¿»ì";
@@ -44,3 +48,4 @@ void Chicken::Delete()
 	pz->Delete();
 	delete pz;
 }
+RegisterPizza Chicken::rp(10, &Chicken::Create);

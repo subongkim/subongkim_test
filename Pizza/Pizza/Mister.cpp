@@ -1,5 +1,9 @@
 #include "Mister.h"
 
+Pizza* Mister::Create(Pizza*)
+{
+	return new Mister;
+}
 Mister::Mister()
 {
 	name = "미스터 피자";
@@ -26,3 +30,5 @@ void Mister::MakeDough()
 	cout << "# 기본 도우를 반죽하는 중..." << endl;
 }
 void Mister::Delete() {}
+
+RegisterPizza Mister::rp(2, &Mister::Create);

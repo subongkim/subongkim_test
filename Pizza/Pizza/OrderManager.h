@@ -23,7 +23,6 @@ public:
 	vector<string> getBrandList();
 	vector<string> getToppingList();
 	vector<int> getPickToppingList();
-	
 	int get_add_Topping();
 	void setPizzaBrand(int);
 	void setTopping(int);

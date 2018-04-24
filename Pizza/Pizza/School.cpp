@@ -1,5 +1,9 @@
 #include "School.h"
 
+Pizza* School::Create(Pizza*)
+{
+	return new School;
+}
 School::School()								//Pizza에 대한 파생 클래스	
 {
 	name = "피자스쿨";
@@ -26,3 +30,5 @@ void School::MakeDough()
 	cout << "# 기본 도우를 반죽하는 중..." << endl;
 }
 void School::Delete() {}
+
+RegisterPizza School::rp(3, &School::Create);

@@ -1,5 +1,9 @@
 #include "Beef.h"
 
+Pizza* Beef::Create(Pizza* pz)
+{
+	return new Beef(pz);
+}
 Beef::Beef(Pizza * pz) : Add(pz){
 	name = "ºÒ°í±â";
 }
@@ -42,3 +46,4 @@ void Beef::Delete()
 }
 //virtual void MakeCheeze() override{}
 //virtual void MakeDough() override{}
+RegisterPizza Beef::rp(20, &Beef::Create);
